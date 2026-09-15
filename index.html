@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <img src="frame.png" class="top-frame" alt="">
+
+  <audio id="weddingMusic">
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="floating-controls">
+    <button id="musicBtn" class="music-btn" type="button" onclick="toggleMusic()">
+      ♪
+    </button>
+
+    <div class="floating-menu">
+      <div id="floatingMenuPanel" class="floating-menu-panel">
+        <button type="button" onclick="goToPanel('heroSection','directionPanel')">Direction</button>
+        <button type="button" onclick="goToPanel('calendarSection','calendarPanel')">Calendar</button>
+        <button type="button" onclick="goToPanel('contactSection','contactPanel')">Contact</button>
+        <button type="button" onclick="scrollToSection('rsvpSection')">RSVP</button>
+        <button type="button" onclick="scrollToSection('messagesSection')">Messages</button>
+      </div>
+
+      <button class="floating-menu-btn" type="button" onclick="toggleFloatingMenu()">
+        Menu
+      </button>
+    </div>
+  </div>
+
+  <div id="preloader">
+    <div class="preloader-content">
+      <p class="preloader-initial">S & S</p>
+      <p class="preloader-text">Loading Invitation</p>
+    </div>
+  </div>
+
+  <div id="landing" onclick="openPage()">
+    <video autoplay muted loop playsinline>
+      <source src="intro.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+  </div>
+
+  <div id="main">
+
+    <section class="hero reveal" id="heroSection">
+      <img src="initial.png" class="hero-img img1" alt="Sofea and Syahir Initial">
+      <img src="invitation.png" class="hero-img img2" alt="Wedding Invitation Text">
+
+      <h2 class="section-title">Meet Us At</h2>
+
+      <p class="venue-date">On Saturday, 12 December 2026</p>
+      <p class="venue-name">Kamalinda Secret Garden Hall</p>
+
+      <button
+        class="main-btn panel-toggle"
+        type="button"
+        data-panel="directionPanel"
+        onclick="togglePanel('directionPanel', this)">
+        Direction
+      </button>
+
+      <div id="directionPanel" class="slide-panel">
+        <a class="option-btn"
+           href="https://www.google.com/maps/search/?api=1&query=Kamalinda+Secret+Garden+Hall"
+           target="_blank">
+          Google Maps
+        </a>
+
+        <a class="option-btn"
+           href="https://waze.com/ul?q=Kamalinda+Secret+Garden+Hall"
+           target="_blank">
+          Waze
+        </a>
+      </div>
+
+      <div class="tentative-card">
+        <h3 class="tentative-title">Tentative</h3>
+
+        <div class="tentative-list">
+          <div class="tentative-item">
+            <p class="tentative-time">6:00 PM</p>
+            <p class="tentative-detail">Wedding Sofea & Syahir</p>
+          </div>
+
+          <div class="tentative-item">
+            <p class="tentative-time">7:00 PM</p>
+            <p class="tentative-detail">Wedding Sofea & Syahir</p>
+          </div>
+
+          <div class="tentative-item">
+            <p class="tentative-time">8:00 PM</p>
+            <p class="tentative-detail">Wedding Sofea & Syahir</p>
+          </div>
+
+          <div class="tentative-item">
+            <p class="tentative-time">9:00 PM</p>
+            <p class="tentative-detail">Wedding Sofea & Syahir</p>
+          </div>
+
+          <div class="tentative-item">
+            <p class="tentative-time">10:00 PM</p>
+            <p class="tentative-detail">Wedding Sofea & Syahir</p>
+          </div>
+
+          <div class="tentative-item">
+            <p class="tentative-time">11:00 PM</p>
+            <p class="tentative-detail">Wedding Sofea & Syahir</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="countdown reveal" id="countdownSection">
+      <h2 class="section-title">Until We Say "I Do"</h2>
+      <p class="date-text">12 December 2026</p>
+
+      <div class="count-box">
+        <div class="box">
+          <div id="days">0</div>
+          <small>Days</small>
+        </div>
+
+        <div class="box">
+          <div id="hours">0</div>
+          <small>Hours</small>
+        </div>
+
+        <div class="box">
+          <div id="minutes">0</div>
+          <small>Minutes</small>
+        </div>
+
+        <div class="box">
+          <div id="seconds">0</div>
+          <small>Seconds</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery reveal" id="gallerySection">
+      <div class="carousel">
+        <div class="track">
+          <img src="g1.jpg" alt="Gallery 1">
+          <img src="g2.jpg" alt="Gallery 2">
+          <img src="g3.jpg" alt="Gallery 3">
+          <img src="g4.jpg" alt="Gallery 4">
+          <img src="g5.jpg" alt="Gallery 5">
+
+          <img src="g1.jpg" alt="Gallery 1">
+          <img src="g2.jpg" alt="Gallery 2">
+          <img src="g3.jpg" alt="Gallery 3">
+          <img src="g4.jpg" alt="Gallery 4">
+          <img src="g5.jpg" alt="Gallery 5">
+        </div>
+      </div>
+    </section>
+
+    <section class="calendar reveal" id="calendarSection">
+      <h2 class="section-title">Add to Calendar</h2>
+
+      <div class="calendar-card">
+        <div class="calendar-header">
+          <p class="calendar-month">December 2026</p>
+          <p class="calendar-event-note">Wedding Day</p>
+        </div>
+
+        <div class="calendar-grid">
+          <div class="calendar-day-name">Sun</div>
+          <div class="calendar-day-name">Mon</div>
+          <div class="calendar-day-name">Tue</div>
+          <div class="calendar-day-name">Wed</div>
+          <div class="calendar-day-name">Thu</div>
+          <div class="calendar-day-name">Fri</div>
+          <div class="calendar-day-name">Sat</div>
+
+          <div class="calendar-date empty"></div>
+          <div class="calendar-date empty"></div>
+
+          <div class="calendar-date">1</div>
+          <div class="calendar-date">2</div>
+          <div class="calendar-date">3</div>
+          <div class="calendar-date">4</div>
+          <div class="calendar-date">5</div>
+
+          <div class="calendar-date">6</div>
+          <div class="calendar-date">7</div>
+          <div class="calendar-date">8</div>
+          <div class="calendar-date">9</div>
+          <div class="calendar-date">10</div>
+          <div class="calendar-date">11</div>
+          <div class="calendar-date highlight"><span>12</span></div>
+
+          <div class="calendar-date">13</div>
+          <div class="calendar-date">14</div>
+          <div class="calendar-date">15</div>
+          <div class="calendar-date">16</div>
+          <div class="calendar-date">17</div>
+          <div class="calendar-date">18</div>
+          <div class="calendar-date">19</div>
+
+          <div class="calendar-date">20</div>
+          <div class="calendar-date">21</div>
+          <div class="calendar-date">22</div>
+          <div class="calendar-date">23</div>
+          <div class="calendar-date">24</div>
+          <div class="calendar-date">25</div>
+          <div class="calendar-date">26</div>
+
+          <div class="calendar-date">27</div>
+          <div class="calendar-date">28</div>
+          <div class="calendar-date">29</div>
+          <div class="calendar-date">30</div>
+          <div class="calendar-date">31</div>
+        </div>
+      </div>
+
+      <button
+        class="main-btn panel-toggle"
+        type="button"
+        data-panel="calendarPanel"
+        onclick="togglePanel('calendarPanel', this)">
+        Add to Calendar
+      </button>
+
+      <div id="calendarPanel" class="slide-panel">
+        <a class="option-btn"
+           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding%20Sofea%20%26%20Syahir&dates=20261212T120000/20261212T160000&location=Kamalinda%20Secret%20Garden%20Hall"
+           target="_blank">
+          Google Calendar
+        </a>
+
+        <button class="option-btn" type="button" onclick="downloadICS()">
+          Apple Calendar
+        </button>
+      </div>
+    </section>
+
+    <section class="contact reveal" id="contactSection">
+      <h2 class="section-title">Guest Contact</h2>
+      <p class="subtitle">For any enquiries, kindly contact us via WhatsApp</p>
+
+      <button
+        class="main-btn panel-toggle"
+        type="button"
+        data-panel="contactPanel"
+        onclick="togglePanel('contactPanel', this)">
+        Contact Person
+      </button>
+
+      <div id="contactPanel" class="slide-panel">
+        <a class="option-btn"
+           href="https://wa.me/60183777956?text=Hi%2C%20I%20would%20like%20to%20ask%20about%20the%20wedding%20invitation."
+           target="_blank">
+          WhatsApp 1
+        </a>
+
+        <a class="option-btn"
+           href="https://wa.me/60183777956?text=Hi%2C%20I%20need%20help%20with%20the%20venue%20location."
+           target="_blank">
+          WhatsApp 2
+        </a>
+
+        <a class="option-btn"
+           href="https://wa.me/60183777956?text=Hi%2C%20I%20would%20like%20to%20confirm%20something%20about%20the%20event."
+           target="_blank">
+          WhatsApp 3
+        </a>
+      </div>
+    </section>
+
+    <section class="dress-code reveal" id="dressCodeSection">
+      <h2 class="section-title">Dress Code</h2>
+      <p class="subtitle">Color reference for our beloved guests</p>
+
+      <div class="palette-card">
+        <div class="palette-row">
+          <div class="palette-item">
+            <span class="color-circle color-1"></span>
+            <p>Soft White</p>
+          </div>
+
+          <div class="palette-item">
+            <span class="color-circle color-2"></span>
+            <p>Soft Pink</p>
+          </div>
+
+          <div class="palette-item">
+            <span class="color-circle color-3"></span>
+            <p>Dusty Peach</p>
+          </div>
+
+          <div class="palette-item">
+            <span class="color-circle color-4"></span>
+            <p>Sage Green</p>
+          </div>
+
+          <div class="palette-item">
+            <span class="color-circle color-5"></span>
+            <p>Batik</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="special-note reveal" id="noteSection">
+      <h2 class="section-title">A Little Note</h2>
+      <img src="wish.png" class="wish-img" alt="Wish">
+    </section>
+
+    <section class="doa reveal" id="doaSection">
+      <h2 class="section-title">Doa</h2>
+      <img src="doa.png" class="doa-img" alt="Doa">
+    </section>
+
+    <section class="rsvp reveal" id="rsvpSection">
+      <h2 class="section-title">RSVP</h2>
+      <p class="subtitle">Kindly let us know your attendance and leave us a message</p>
+
+      <form id="rsvpForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="number" name="pax" placeholder="Number of Guests" required>
+
+        <textarea
+          id="messageInput"
+          name="message"
+          placeholder="Your Message / Wishes"></textarea>
+
+        <p id="charCounter">0 / 200 words</p>
+
+        <button type="submit" id="submitBtn" class="main-btn">
+          Send RSVP
+        </button>
+      </form>
+
+      <p id="msg"></p>
+    </section>
+
+    <section class="guest-messages reveal" id="messagesSection">
+      <h2 class="section-title">Messages</h2>
+      <p class="subtitle">Warm wishes from our guests</p>
+
+      <div class="message-card">
+        <p id="guestMessageText">Your wishes will appear here soon.</p>
+        <p id="guestMessageName"></p>
+      </div>
+
+      <button class="main-btn wishes-btn" type="button" onclick="openWishesPopup()">
+        View All Wishes
+      </button>
+    </section>
+
+  </div>
+
+  <div id="successPopup" class="popup">
+    <div class="popup-box">
+      <h2>Thank You</h2>
+      <p>Sofea & Syahir have received your RSVP.</p>
+      <p class="popup-small">Your message has been sent successfully.</p>
+
+      <button type="button" onclick="closePopup()">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <div id="wishesPopup" class="popup">
+    <div class="popup-box wishes-box">
+      <h2>Guest Wishes</h2>
+
+      <div id="allWishesList" class="all-wishes-list">
+        <p class="empty-wishes">No wishes yet.</p>
+      </div>
+
+      <button type="button" onclick="closeWishesPopup()">
+        Close
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
