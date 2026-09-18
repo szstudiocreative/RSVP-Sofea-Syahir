@@ -46,20 +46,6 @@ body::after{
   pointer-events:none;
 }
 
-/* TOP STATIC FRAME */
-.top-frame{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100vw;
-  max-width:none;
-  height:auto;
-  z-index:940;
-  pointer-events:none;
-  user-select:none;
-  display:block;
-}
-
 /* FLOATING CONTROLS CENTER */
 .floating-controls{
   position:fixed;
@@ -1069,10 +1055,6 @@ section{
 
   body::after{
     background:rgba(251,250,247,0.04);
-  }
-
-  .top-frame{
-    width:100vw;
   }
 
   .floating-controls{
