@@ -489,9 +489,9 @@ function downloadICS(){
 VERSION:2.0
 BEGIN:VEVENT
 SUMMARY:Wedding Sofea & Syahir
-DTSTART:20261212T120000
-DTEND:20261212T160000
-LOCATION:Kamalinda Secret Garden Hall
+DTSTART:20261212T180000
+DTEND:20261212T220000
+LOCATION:Kamalinda Events & Weddings, Utropolis Marketplace, Jalan Kontraktor U1/14, Shah Alam, Selangor
 DESCRIPTION:Wedding Invitation
 END:VEVENT
 END:VCALENDAR`;
