@@ -7,43 +7,6 @@ let isMusicPlaying = false;
 
 const maxWords = 200;
 
-/* INTRO VIDEO AUTOPLAY FIX */
-const introVideo = document.getElementById("introVideo");
-
-function playIntroVideo(){
-  if(!introVideo){
-    return;
-  }
-
-  introVideo.muted = true;
-  introVideo.defaultMuted = true;
-  introVideo.playsInline = true;
-
-  const playPromise = introVideo.play();
-
-  if(playPromise !== undefined){
-    playPromise.catch(()=>{
-      introVideo.muted = true;
-    });
-  }
-}
-
-document.addEventListener("DOMContentLoaded", ()=>{
-  playIntroVideo();
-});
-
-window.addEventListener("load", ()=>{
-  playIntroVideo();
-});
-
-document.addEventListener("touchstart", ()=>{
-  playIntroVideo();
-},{once:true});
-
-document.addEventListener("click", ()=>{
-  playIntroVideo();
-},{once:true});
-
 /* PRELOADER */
 function hidePreloader(){
   const preloader = document.getElementById("preloader");
