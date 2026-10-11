@@ -244,7 +244,7 @@ body::after{
 .tap-note{
   position:absolute;
   left:50%;
-  bottom:52px;
+  bottom:75px;
   transform:translateX(-50%);
   z-index:1001;
   padding:12px 22px;
@@ -1095,7 +1095,7 @@ section{
   }
 
   .tap-note{
-    bottom:100px;
+    bottom:70px;
     padding:11px 20px;
     font-size:13px;
   }
