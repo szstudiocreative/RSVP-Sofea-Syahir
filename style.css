@@ -462,7 +462,7 @@ section{
 }
 
 .slide-panel.open{
-  max-height:260px;
+  max-height:360px;
   opacity:1;
   transform:translateY(0);
   margin-top:14px;
